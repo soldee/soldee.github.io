@@ -205,7 +205,7 @@ const ProjectCard = ({ project, langClass }) => {
 
       <div className="proj-footer">
         <span className="proj-metric">{project.metric}</span>
-        {hasLink && <span className="proj-link-text">view &rarr;</span>}
+        {hasLink && <span className="proj-link-text">VIEW &rarr;</span>}
       </div>
 
     </CardWrapper>
@@ -214,9 +214,68 @@ const ProjectCard = ({ project, langClass }) => {
 
 
 const Projects = () => {
+  const [activeSection, setActiveSection] = useState('volunteer');
+
+  // Track scroll position to update the active index
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -60% 0px' } 
+    );
+
+    const sectionIds = ['volunteer', 'ml', 'systems'];
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, []);
+
+  const handleNavClick = (id) => {
+    setActiveSection(id);
+    const element = document.getElementById(id);
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <section className="section" style={{ background: '#F2F2EF' }}>
+      <aside className="projects-index-fixed">
+        <button
+          onClick={() => handleNavClick('volunteer')}
+          className={`index-item ${activeSection === 'volunteer' ? 'active' : ''}`}
+        >
+          Field Engineering
+        </button>
+        <button
+          onClick={() => handleNavClick('ml')}
+          className={`index-item ${activeSection === 'ml' ? 'active' : ''}`}
+        >
+          ML & DL
+        </button>
+        <button
+          onClick={() => handleNavClick('systems')}
+          className={`index-item ${activeSection === 'systems' ? 'active' : ''}`}
+        >
+          Systems
+        </button>
+      </aside>
+
+      <section id="volunteer" className="section" >
         <div className="section-inner">
           <p className="section-label">Field engineering &amp; volunteer work</p>
           <div className="projects-grid">
@@ -227,7 +286,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <section className="section" style={{ background: '#F2F2EF' }}>
+      <section id="ml" className="section" style={{ paddingTop: "0px" }}>
         <div className="section-inner">
           <p className="section-label">MSc projects — machine learning &amp; deep learning</p>
           <div className="projects-grid">
@@ -238,7 +297,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <section className="section">
+      <section id="systems" className="section" style={{ paddingTop: "0px" }}>
         <div className="section-inner">
           <p className="section-label">Systems projects — built from scratch</p>
           <div className="projects-grid">

@@ -1,24 +1,6 @@
 import React from 'react';
 import { ArrowDownIcon } from '../components/Icons';
 
-const statsData = [
-  {
-    num: "90",
-    unit: "%",
-    desc: "Data synchronisation latency reduced in MDM migration to event-driven architecture"
-  },
-  {
-    num: "500",
-    unit: "k+",
-    desc: "Daily requests handled after scaling a document management system"
-  },
-  {
-    num: "3",
-    unit: " yrs",
-    desc: "Production data engineering across Spark, Kafka, MongoDB, and Hadoop"
-  }
-];
-
 const experienceData = [
   {
     id: "bcn-emotorsport",
@@ -140,16 +122,6 @@ const Experience = () => {
     <section className="section">
       <div className="section-inner">
         <p className="section-label">Professional experience</p>
-
-        {/* Stats Grid */}
-        <div className="stats-grid">
-          {statsData.map((stat, index) => (
-            <div className="stat-cell" key={`stat-${index}`}>
-              <p className="stat-num">{stat.num}<span>{stat.unit}</span></p>
-              <p className="stat-desc">{stat.desc}</p>
-            </div>
-          ))}
-        </div>
 
         {/* Experience Timeline */}
         <div className="timeline">
