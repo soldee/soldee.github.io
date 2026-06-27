@@ -90,7 +90,7 @@ nav {
 }
 .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-/* --- Carousel Layout --- */
+/* Carousel Layout */
 .motto-carousel-wrapper {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -140,12 +140,46 @@ nav {
   font-size: 16px;
 }
 
+.motto-eyebrow-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.motto-eyebrow-btn {
+  background: none;
+  border: none;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-sec);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.motto-eyebrow-btn:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.motto-eyebrow-btn.active {
+  background: var(--text);
+  color: var(--text-inv);
+  font-weight: 500;
+}
+
 .carousel-dots {
   display: flex;
   gap: 8px;
   position: absolute;
-  bottom: 2.5rem;   /* Locked at a fixed distance from the bottom */
-  right: 3rem;    /* Placed right beneath the text side */
+  bottom: 2.5rem;
+  right: 3rem;
   z-index: 10;
 }
 
@@ -459,7 +493,7 @@ nav {
 
 /* Skills Section */
 .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-.skill-cat { font-size: 16px; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 0.7rem; display: block; }
+.skill-cat { font-font-size: 16px; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 0.7rem; display: block; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .stag { font-size: 14px; padding: 5px 13px; border-radius: 6px; border: 1px solid var(--border); color: var(--text-sec); background: var(--card-bg); }
 

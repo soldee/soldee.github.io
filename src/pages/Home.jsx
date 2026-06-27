@@ -86,7 +86,6 @@ const Home = () => {
 
   const handleDotClick = (index) => {
     setCurrentSlide(index);
-    
     setIsPaused(true);
 
     if (pauseTimeoutRef.current) {
@@ -95,7 +94,7 @@ const Home = () => {
 
     pauseTimeoutRef.current = setTimeout(() => {
       setIsPaused(false);
-    }, 30000);
+    }, 40000);
   };
 
   const activeData = mottoSlides[currentSlide];
@@ -129,6 +128,19 @@ const Home = () => {
           
           <div className="motto-carousel-wrapper">
             
+            <div className="motto-eyebrow-nav">
+              {mottoSlides.map((slide, index) => (
+                <button 
+                  key={index} 
+                  onClick={() => handleDotClick(index)}
+                  className={`motto-eyebrow-btn ${currentSlide === index ? 'active' : ''}`}
+                  aria-label={`View ${slide.eyebrow} principle`}
+                >
+                  {slide.eyebrow}
+                </button>
+              ))}
+            </div>
+
             <div className="motto-slide" key={currentSlide}>
               <img 
                 src={activeData.image} 
@@ -136,7 +148,6 @@ const Home = () => {
                 className="motto-slide-image" 
               />
               <div className="motto-slide-content">
-                <span className="motto-eyebrow">{activeData.eyebrow}</span>
                 <h3 className="motto-title">{activeData.title}</h3>
                 <p className="motto-desc">{activeData.desc}</p>
               </div>
@@ -157,7 +168,6 @@ const Home = () => {
 
         </div>
       </section>
-
     </>
   );
 };
