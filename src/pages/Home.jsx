@@ -158,52 +158,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="section" style={{ background: '#F2F2EF' }}>
-        <div className="section-inner">
-          <p className="section-label">Skills</p>
-          <div className="skills-grid">
-            <div className="skill-group">
-              <span className="skill-cat">ML / DL</span>
-              <div className="skill-tags">
-                <span className="stag">PyTorch</span>
-                <span className="stag">Sklearn</span>
-              </div>
-            </div>
-            <div className="skill-group">
-              <span className="skill-cat">Languages</span>
-              <div className="skill-tags">
-                <span className="stag">English (Proficient)</span>
-                <span className="stag">Catalan (Native)</span>
-                <span className="stag">Spanish (Native)</span>
-                <span className="stag">French (Basic)</span>
-              </div>
-            </div>
-            <div className="skill-group">
-              <span className="skill-cat">Data &amp; infrastructure</span>
-              <div className="skill-tags">
-                <span className="stag">Spark</span>
-                <span className="stag">Kafka</span>
-                <span className="stag">Polars</span>
-                <span className="stag">MongoDB</span>
-                <span className="stag">Hadoop</span>
-                <span className="stag">Docker</span>
-                <span className="stag">ROS</span>
-              </div>
-            </div>
-            <div className="skill-group">
-              <span className="skill-cat">Programming Languages</span>
-              <div className="skill-tags">
-                <span className="stag">Python</span>
-                <span className="stag">Go</span>
-                <span className="stag">C</span>
-                <span className="stag">C++</span>
-                <span className="stag">Scala</span>
-                <span className="stag">Java</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };
