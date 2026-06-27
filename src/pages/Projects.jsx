@@ -100,6 +100,18 @@ const volunteerProjects = [
     metric: "AUCOOP",
     link: "https://aucoop.upc.edu/sant-joan-de-deu-a-camerun-26/",
     images: ["/stjeandieu_1.jpeg"]
+  },
+  {
+    title: "XPRIZE Rainforest: Aerial Relay Communication System (BSc Thesis)",
+    desc: `
+    Engineered a remote communication architecture for the XPRIZE Rainforest competition to establish reliable data links 
+    between deep-forest sensors and base camps. Conducted a comparative empirical analysis of LoRa and IEEE 802.11ah, selecting 
+    802.11ah to overcome throughput bottlenecks. Designed and built a drone-mounted relay prototype to bypass canopy attenuation 
+    via line-of-sight, providing critical field-test insights into cross-channel interference in dense environments.
+    `,
+    metric: "LoRa · IEEE 802.11ah · Networking",
+    link: "https://upcommons.upc.edu/entities/publication/ce199590-ff50-4616-9cdc-56fa8c457888",
+    images: ["xprize1.png", "xprize2.png", "xprize3.png", "xprize4.png", "xprize5.png"]
   }
 ];
 
