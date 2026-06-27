@@ -58,7 +58,7 @@ const mottoSlides = [
       persistence than any documentation. A DNS resolver teaches you more about network data flow than any diagram. Shell, HTTP 
       server, Go, C, C++ — not to add lines to a CV, but because the abstractions only make sense once you've seen what they're hiding.
     `,
-    image: "CIAC_0607.jpg"
+    image: "CIAC_0607.png"
   }
 ];
 
