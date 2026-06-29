@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { GitHubIcon, LinkedInIcon, ArrowDownIcon } from '../components/Icons';
+import ScrollIndicator from '../components/ScrollIndicator';
 
 const mottoSlides = [
   {
@@ -106,7 +107,9 @@ const Home = () => {
           <p className="hero-eyebrow">Data &amp; ML Engineer · Barcelona</p>
           <h1>Production engineer,<br />now building with deep learning.</h1>
           <p className="hero-sub">
-            3+ years designing high-throughput data pipelines and distributed systems at scale. Currently completing an MSc in Deep Learning at UPC — applying that same engineering rigour to computer vision, NLP, and speech.
+            Data is at the core of every system worth building — and most systems get it wrong. I've spent three years fixing that in production at 
+            scale, and the last year applying the same rigour to deep learning: computer vision, NLP, and speech, at UPC and on a Formula Student 
+            autonomous vehicle.
           </p>
           <div className="hero-ctas">
             <a href="https://github.com/soldee" className="clink" target="_blank" rel="noopener noreferrer">
@@ -120,9 +123,14 @@ const Home = () => {
             <a href="/CV_OriolSoldevila.pdf" className="clink">CV <ArrowDownIcon /></a>
           </div>
         </div>
+
+        <ScrollIndicator targetId="principles">
+          <span>Core Principles</span>
+          <ArrowDownIcon />
+        </ScrollIndicator>
       </section>
 
-      <section className="section">
+      <section id="principles" className="section">
         <div className="section-inner">
           <p className="section-label">Core Principles</p>
           

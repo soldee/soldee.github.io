@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollIndicator from '../components/ScrollIndicator'; // <-- 1. Import it here
 
 const mlProjects = [
   {
@@ -228,7 +229,6 @@ const ProjectCard = ({ project, langClass }) => {
 const Projects = () => {
   const [activeSection, setActiveSection] = useState('volunteer');
 
-  // Track scroll position to update the active index
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -257,34 +257,37 @@ const Projects = () => {
 
   const handleNavClick = (id) => {
     setActiveSection(id);
-    const element = document.getElementById(id);
-    if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
   };
 
   return (
     <>
       <aside className="projects-index-fixed">
-        <button
+        <ScrollIndicator
+          targetId="volunteer"
+          offset={80}
           onClick={() => handleNavClick('volunteer')}
           className={`index-item ${activeSection === 'volunteer' ? 'active' : ''}`}
         >
           Field Engineering
-        </button>
-        <button
+        </ScrollIndicator>
+        
+        <ScrollIndicator
+          targetId="ml"
+          offset={80}
           onClick={() => handleNavClick('ml')}
           className={`index-item ${activeSection === 'ml' ? 'active' : ''}`}
         >
           ML & DL
-        </button>
-        <button
+        </ScrollIndicator>
+        
+        <ScrollIndicator
+          targetId="systems"
+          offset={80}
           onClick={() => handleNavClick('systems')}
           className={`index-item ${activeSection === 'systems' ? 'active' : ''}`}
         >
           Systems
-        </button>
+        </ScrollIndicator>
       </aside>
 
       <section id="volunteer" className="section" >
