@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ScrollIndicator from '../components/ScrollIndicator'; // <-- 1. Import it here
+import ScrollIndicator from '../components/ScrollIndicator';
 
 const mlProjects = [
   {
@@ -116,6 +116,15 @@ const volunteerProjects = [
   }
 ];
 
+const platformProjects = [
+  {
+    title: "LeetCode",
+    link: "https://leetcode.com/u/soldee/",
+    metric: "DSA",
+    images: ["https://raw.githubusercontent.com/soldee/portfolio-generators/refs/heads/master/output/leetcode-stats.svg"]
+  }
+];
+
 
 const ProjectCard = ({ project, langClass }) => {
   const hasLink = Boolean(project.link && project.link.trim() !== "");
@@ -213,13 +222,15 @@ const ProjectCard = ({ project, langClass }) => {
             </span>
           )}
         </div>
-        <p className="proj-desc">{project.desc}</p>
+        {project.desc && <p className="proj-desc">{project.desc}</p>}
       </div>
 
-      <div className="proj-footer">
-        <span className="proj-metric">{project.metric}</span>
-        {hasLink && <span className="proj-link-text">VIEW &rarr;</span>}
-      </div>
+      {(project.metric || hasLink) && (
+        <div className="proj-footer">
+          <span className="proj-metric">{project.metric}</span>
+          {hasLink && <span className="proj-link-text">VIEW &rarr;</span>}
+        </div>
+      )}
 
     </CardWrapper>
   );
@@ -241,7 +252,7 @@ const Projects = () => {
       { rootMargin: '-20% 0px -60% 0px' } 
     );
 
-    const sectionIds = ['volunteer', 'ml', 'systems'];
+    const sectionIds = ['volunteer', 'ml', 'systems', 'platforms'];
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
@@ -288,6 +299,14 @@ const Projects = () => {
         >
           Systems
         </ScrollIndicator>
+        <ScrollIndicator
+          targetId="platforms"
+          offset={80}
+          onClick={() => handleNavClick('platforms')}
+          className={`index-item ${activeSection === 'platforms' ? 'active' : ''}`}
+        >
+          Coding Platforms
+        </ScrollIndicator>
       </aside>
 
       <section id="volunteer" className="section" >
@@ -318,6 +337,17 @@ const Projects = () => {
           <div className="projects-grid">
             {systemProjects.map((proj, idx) => (
               <ProjectCard key={idx} project={proj} langClass="sys-lang" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms" className="section" style={{ paddingTop: "0px" }}>
+        <div className="section-inner">
+          <p className="section-label">Coding platforms</p>
+          <div className="projects-grid">
+            {platformProjects.map((proj, idx) => (
+              <ProjectCard key={idx} project={proj} langClass="proj-lang" />
             ))}
           </div>
         </div>
