@@ -9,15 +9,15 @@ const mottoSlides = [
     eyebrow: "Engineer",
     title: "I build systems that don't fall over.",
     desc: `
-      Three years in, I redesigned a data pipeline that was making users wait days to change a single field — not 
+      Three years in, I redesigned a data pipeline that was making users wait days to change a single field - not 
       because anyone had made a bad decision, but because the system had been built with the wrong thing as ground truth. 
       Spark processed files, ran checks, populated a data warehouse, and MongoDB sat at the end as a read-only view. 
       Users edited the "view." I flipped it: MongoDB becomes the source of truth, changes propagate in real time, and the 
-      warehouse derives from it rather than driving it. The result was immediate — processing times that used to span days 
+      warehouse derives from it rather than driving it. The result was immediate - processing times that used to span days 
       dropped to seconds for manual changes, reliability improved because we eliminated an entire class of sync failures 
       between two competing sources of truth, and the infrastructure cost dropped significantly by removing batch jobs that 
       existed solely to paper over the architectural mismatch. 
-      That's the kind of problem I look for — not the one that's technically hard, but the one where understanding how data 
+      That's the kind of problem I look for - not the one that's technically hard, but the one where understanding how data 
       actually flows changes everything downstream.
     `,
     image: "oriol_soldevila.jpg"
@@ -28,12 +28,12 @@ const mottoSlides = [
     title: "I train models and understand why they work.",
     desc: `
       Good models fail quietly, and most people don't notice until it's too late. My MSc in Deep Learning taught me to 
-      measure everything — not just accuracy on a held-out set, but failure modes, edge cases, and what the model actually 
+      measure everything - not just accuracy on a held-out set, but failure modes, edge cases, and what the model actually 
       learned versus what you hoped it learned. I implement from first principles (LoRA, attention pooling, Frangi filtering) 
       because if you can't rebuild it, you can't debug it. 
       At BCN eMotorsport I applied the same rigour to a real constraint: replacing a heuristic-based cluster classifier for LiDAR 
-      point clouds with a family of trained ML models, significantly improving robustness to noise — in a system where a misclassified 
-      cone at speed has real consequences. Data in, decisions out — and you need to trust every step of that chain.
+      point clouds with a family of trained ML models, significantly improving robustness to noise - in a system where a misclassified 
+      cone at speed has real consequences. Data in, decisions out - and you need to trust every step of that chain.
     `,
     image: "cat17x.JPG"
   },
@@ -43,7 +43,7 @@ const mottoSlides = [
     title: "I deploy systems where there's no safety net.",
     desc: `
       This one I wanted for a long time. Being able to take skills I'd built in data infrastructure and networking and apply them 
-      somewhere they genuinely mattered — not to optimize a dashboard metric, but to help a hospital run better — was something I'd been 
+      somewhere they genuinely mattered - not to optimize a dashboard metric, but to help a hospital run better - was something I'd been 
       looking for. I lived in Yassa, Cameroon for a month, working with the team at St John of God Hospital to design and deploy their 
       network infrastructure from scratch and implement a Hospital Management System. The technical constraints were real, the workarounds 
       were creative, and the people I met made it one of the most rewarding things I've done.
@@ -57,7 +57,7 @@ const mottoSlides = [
     desc: `
       I build things from scratch to understand what's actually happening inside them. A Redis server teaches you more about data 
       persistence than any documentation. A DNS resolver teaches you more about network data flow than any diagram. Shell, HTTP 
-      server, Go, C, C++ — not to add lines to a CV, but because the abstractions only make sense once you've seen what they're hiding.
+      server, Go, C, C++ - not to add lines to a CV, but because the abstractions only make sense once you've seen what they're hiding.
     `,
     image: "CIAC_0607.png"
   }
@@ -107,7 +107,7 @@ const Home = () => {
           <p className="hero-eyebrow">Data &amp; ML Engineer · Barcelona</p>
           <h1>Production engineer,<br />now building with deep learning.</h1>
           <p className="hero-sub">
-            Data is at the core of every system worth building — and most systems get it wrong. I've spent three years fixing that in production at 
+            Data is at the core of every system worth building - and most systems get it wrong. I've spent three years fixing that in production at 
             scale, and the last year applying the same rigour to deep learning: computer vision, NLP, and speech, at UPC and on a Formula Student 
             autonomous vehicle.
           </p>

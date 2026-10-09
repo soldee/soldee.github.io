@@ -11,11 +11,11 @@ const experienceData = [
     desc: `
     Built a perception evaluation pipeline from scratch for the team's autonomous vehicle stack. The ground truth extraction tool processes 
     ROS bags through SLAM, removes ground points, accumulates a single point cloud, runs clustering and a lightweight classification pass, 
-    and uploads the result to Xtreme1 for human revision — making what would otherwise be a fully manual labeling task semi-automatic. 
+    and uploads the result to Xtreme1 for human revision - making what would otherwise be a fully manual labeling task semi-automatic. 
     The evaluation tool runs the perception pipeline against that ground truth and produces interpretable metrics: mean cone detection distance, 
     mean distance to track limits, precision and recall. 
     Separately, replaced the heuristic-based cluster classifier with a family of trained ML models, significantly improving robustness to noise 
-    in the point cloud — a problem where heuristics had hit their ceiling.
+    in the point cloud - a problem where heuristics had hit their ceiling.
     `,
     accentPill: null,
     pills: ["ROS", "Formula Student", "Autonomous Vehicles"]
@@ -28,7 +28,7 @@ const experienceData = [
     isCurrent: false,
     desc: `
     Led the migration of the MDM system to the new event-driven model using Scala and MongoDB. The most significant work here was rethinking how data 
-    flowed through the platform entirely. The existing architecture treated a Spark data warehouse as ground truth — files were ingested, processed 
+    flowed through the platform entirely. The existing architecture treated a Spark data warehouse as ground truth - files were ingested, processed 
     through heavy business rules, and eventually surfaced in MongoDB for the frontend. 
     Users who needed to correct a record had to wait for the full batch process to complete, sometimes days, just to change a single field. I redesigned 
     it to work the other way around: MongoDB becomes the source of truth, changes propagate in real time, and the warehouse derives from it rather than 
@@ -46,7 +46,7 @@ const experienceData = [
     isCurrent: false,
     desc: `
     Diagnosed and resolved critical performance bottlenecks in a Spark pipeline responsible for aggregating and publishing multi-source data. The core 
-    issue was in how reads were being executed — by introducing predicate pushdown and replacing broad reads with readIsIn filters, I significantly reduced 
+    issue was in how reads were being executed - by introducing predicate pushdown and replacing broad reads with readIsIn filters, I significantly reduced 
     the data scanned per job, cutting execution times and improving reliability for a pipeline that downstream teams depended on daily.
     `,
     accentPill: null,
@@ -73,7 +73,7 @@ const experienceData = [
     isCurrent: false,
     desc: `
     Worked within an international team to map urban air pollution via a fleet of electric scooters equipped with low-cost IoT CO₂/NO₂ sensors. The 
-    challenge was that cheap sensors drift — they read differently depending on temperature, humidity, and age, and can't be trusted raw. Trained and 
+    challenge was that cheap sensors drift - they read differently depending on temperature, humidity, and age, and can't be trusted raw. Trained and 
     deployed ML models to calibrate their output against historical data from fixed reference stations, turning unreliable sensor readings into data you 
     could actually use. First real experience of the full loop: messy real-world data, a model that had to work in deployment, and a metric that mattered 
     beyond a held-out test set.

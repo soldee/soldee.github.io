@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import ScrollIndicator from '../components/ScrollIndicator';
 
+const applicationsProjects = [
+  {
+    title: "ArxivER",
+    lang: "Python",
+    desc: `
+    arxiver is a hybrid search engine designed to ingest, index, and retrieve academic papers from arXiv. Its event-driven AWS data architecture pairs PostgreSQL full-text search (tsvector) with dense vector embeddings (pgvector HNSW), merging results via Reciprocal Rank Fusion (RRF) and Cross-Encoder reranking.
+    `,
+    metric: <>RRF · BM25 (Sparse search) · Embeddings (Dense search)</>,
+    link: "https://github.com/soldee/arxiver",
+    images: ["/arxiver_1.png", "/arxiver_2.png"] 
+  }
+]
+
 const mlProjects = [
   {
-    title: "F2000 — Brain vein segmentation",
+    title: "F2000 - Brain vein segmentation",
     lang: "Python",
     desc: `
     End-to-end SWI MRI pipeline that won our team first place in the BioMedical Imaging hackathon: Frangi multiscale vesselness filtering, dual-criterion adaptive thresholding, 
@@ -15,7 +28,7 @@ const mlProjects = [
     images: ["/F2000_vein_segmentator_1.png", "/F2000_vein_segmentator_2.png", "/F2000_vein_segmentator_3.png", "/F2000_vein_segmentator_4.png"] 
   },
   {
-    title: "LoRA fine-tuning — speech commands",
+    title: "LoRA fine-tuning - speech commands",
     lang: "PyTorch",
     desc: "Low-Rank Adaptation (rank 8) across all attention projections of wav2vec 2.0 - training only 0.83% of parameters. Waveform augmentation pipeline, layer selection via linear probes, confusion and noise-robustness analysis.",
     metric: <>Kaggle <strong>98.85%</strong> · baseline <strong>94.49%</strong></>,
@@ -23,14 +36,14 @@ const mlProjects = [
     images: ["wav2vec.png"]
   },
   {
-    title: "Language identification — 235 languages",
+    title: "Language identification - 235 languages",
     lang: "PyTorch",
     desc: "BiLSTM with BPE tokenisation and attention pooling. Evolved through 8 model iterations with data augmentation and early stopping. Includes per-language error analysis and confusion taxonomy.",
     metric: <>Acc <strong>95.86%</strong> · baseline <strong>93.51%</strong></>,
     link: ""
   },
   {
-    title: "Spoken digit recognition — DTW & wav2vec",
+    title: "Spoken digit recognition - DTW & wav2vec",
     lang: "Python",
     desc: "Classical DTW with MFCC vs. frozen wav2vec 2.0 features. Full sweep of all 12 transformer layers, cepstral normalisation strategies, and distance metrics. Best: CMVN + sqEuclidean DTW on layer 6.",
     metric: <>Val error <strong>15.8%</strong> · baseline <strong>57.7%</strong></>,
@@ -44,7 +57,7 @@ const mlProjects = [
     link: ""
   },
   {
-    title: "Word embeddings — CBOW on Catalan",
+    title: "Word embeddings - CBOW on Catalan",
     lang: "PyTorch",
     desc: "CBOW with three position-weighting strategies on a 100k-token Catalan corpus. Analogy tasks, gender bias analysis, and t-SNE visualisation of the learned embedding space.",
     metric: "100k token vocabulary",
@@ -92,7 +105,7 @@ const systemProjects = [
 
 const volunteerProjects = [
   {
-    title: "Hospital Management System — Yassa (Douala), Cameroon",
+    title: "Hospital Management System - Yassa (Douala), Cameroon",
     lang: "Infra",
     desc: `
     Led a digital transformation project for St John of God Hospital under AUCOOP (Associació d'Universitaris per a la Cooperació). 
@@ -281,6 +294,15 @@ const Projects = () => {
         >
           Field Engineering
         </ScrollIndicator>
+
+        <ScrollIndicator
+          targetId="applications"
+          offset={80}
+          onClick={() => handleNavClick('applications')}
+          className={`index-item ${activeSection === 'applications' ? 'active' : ''}`}
+        >
+          Applications
+        </ScrollIndicator>
         
         <ScrollIndicator
           targetId="ml"
@@ -320,9 +342,20 @@ const Projects = () => {
         </div>
       </section>
 
+      <section id="applications" className="section" style={{ paddingTop: "0px" }}>
+        <div className="section-inner">
+          <p className="section-label">Applications</p>
+          <div className="projects-grid">
+            {applicationsProjects.map((proj, idx) => (
+              <ProjectCard key={idx} project={proj} langClass="proj-lang" />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="ml" className="section" style={{ paddingTop: "0px" }}>
         <div className="section-inner">
-          <p className="section-label">MSc projects — machine learning &amp; deep learning</p>
+          <p className="section-label">MSc projects - machine learning &amp; deep learning</p>
           <div className="projects-grid">
             {mlProjects.map((proj, idx) => (
               <ProjectCard key={idx} project={proj} langClass="proj-lang" />
@@ -333,7 +366,7 @@ const Projects = () => {
 
       <section id="systems" className="section" style={{ paddingTop: "0px" }}>
         <div className="section-inner">
-          <p className="section-label">Systems projects — built from scratch</p>
+          <p className="section-label">Systems projects - built from scratch</p>
           <div className="projects-grid">
             {systemProjects.map((proj, idx) => (
               <ProjectCard key={idx} project={proj} langClass="sys-lang" />

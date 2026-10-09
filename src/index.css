@@ -555,7 +555,7 @@ nav {
   color: var(--text);
   border-left-color: var(--accent); /* Uses your primary highlight color */
   font-weight: 500;
-  background: var(--accent-light);
+  /*background: var(--accent-light);*/
 }
 
 /* When the screen gets too small for a side menu, put it back in the normal flow at the top */
