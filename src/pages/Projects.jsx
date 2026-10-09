@@ -265,7 +265,7 @@ const Projects = () => {
       { rootMargin: '-20% 0px -60% 0px' } 
     );
 
-    const sectionIds = ['volunteer', 'ml', 'systems', 'platforms'];
+    const sectionIds = ['volunteer', 'applications', 'ml', 'systems', 'platforms'];
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);

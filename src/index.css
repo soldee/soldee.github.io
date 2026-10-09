@@ -17,7 +17,7 @@
   --serif: 'DM Serif Display', serif;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   font-family: var(--sans);
