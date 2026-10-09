@@ -1,13 +1,22 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route, NavLink, Outlet } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { Routes, Route, NavLink, Outlet, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 const Layout = () => {
   return (
     <>
+      <ScrollToTop />
       <nav>
         <span className="nav-name">oriol.soldevila</span>
         <div className="nav-links">
@@ -17,7 +26,7 @@ const Layout = () => {
           <NavLink to="/contact">Contact</NavLink>
         </div>
       </nav>
-      
+
       <main className="page-content">
         <Outlet />
       </main>
